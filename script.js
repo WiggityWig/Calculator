@@ -1,8 +1,8 @@
-const initialArray = [];
+let initialArray = [];
 let newArray = [];
 const displayValue = 0;
 const display = document.getElementById("display");
-const clear = document.getElementById('#clear');
+const clear = document.getElementById('clear');
 const posNeg = document.getElementById('#pos-neg');
 const percentage = document.getElementById('#percentage');
 const div = document.getElementById('#divide');
@@ -20,7 +20,7 @@ const three = document.getElementById('#3');
 const addition = document.getElementById('#add');
 const zero = document.getElementById('#zero');
 const decimal = document.getElementById("#decimal");
-const equals = document.getElementById('#equals');
+const equals = document.getElementById('equals');
 
 
 //function that populates the display with text when a number is pressed
@@ -43,8 +43,22 @@ let combine = function(array) {
     return newArray;
 }
 
+clear.addEventListener('click', () => {
+    initialArray = [];
+    newArray = [];
+    currentNumber = '';
+    display.textContent = '';
+});
+
+equals.addEventListener('click', () =>{
+    display.textContent = calculate(newArray);
+}); 
+
 buttons.forEach(button => {
-    button.addEventListener('click', () => {
+        if(button.id === "equals"){
+            return;
+        }
+       button.addEventListener('click', () => {
        display.textContent += button.textContent;
        initialArray.push(button.textContent);
         
@@ -82,7 +96,10 @@ const calculate = (array) => {
         total = operate(total, operator, parseFloat(element));
       }
     }
-  
+    newArray=[];
+    initialArray=[String(total)];
+    currentNumber='';
+
     return total;
   }
 
