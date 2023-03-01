@@ -3,7 +3,7 @@ let newArray = [];
 const displayValue = 0;
 const display = document.getElementById("display");
 const clear = document.getElementById('clear');
-const posNeg = document.getElementById('#pos-neg');
+const del = document.getElementById('del');
 const percentage = document.getElementById('#percentage');
 const div = document.getElementById('#divide');
 const seven = document.getElementById('#7');
@@ -57,6 +57,13 @@ clear.addEventListener('click', () => {
     display.textContent = '0';
 });
 
+del.addEventListener('click', () => {
+    initialArray.pop();
+    display.textContent = display.textContent.substring(0, display.textContent.length - 1);
+});
+
+
+
 equals.addEventListener('click', () =>{
     display.textContent = calculate(newArray);
 }); 
@@ -77,23 +84,6 @@ buttons.forEach(button => {
         
     });
 });
-
-//addition
-const add = (a,b) => {
-    return total = a + b;
-}
-//subtraction
-const sub = (a,b) => {
-    return a-b;
-}
-//multiplication
-const mult = (a,b) => {
-    return total = a * b;
-}
-//division
-const divide = (a,b) => {
-    return  total = a / b;
-}
 
 const calculate = (array) => {
     let processedArray = combine(initialArray);
