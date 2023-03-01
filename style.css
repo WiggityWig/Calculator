@@ -13,19 +13,36 @@
     margin: 0;
 }
 
-#display{
+#display-container{
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    color: azure;
     background-color: rgb(39, 38, 38);
     border-top-left-radius: 25px;
     border-top-right-radius: 25px;
     border: 1px solid black;
     width: 406px;
     height: 95.33px;
+    font-size: 45px;
 
 }
 
 #buttons{
     display: flex;
     flex-wrap: wrap;
+}
+
+.button{
+    color: azure;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border:1px solid black;
+    width:100px;
+    height:83.33px;
+    background-color: rgb(106, 104, 104);
+    font-size: 28px;
 }
 
 .btn{
@@ -53,6 +70,6 @@
     background-color: goldenrod;
 }
 
-.btn.options{
+#clear,#pos-neg,#percentage{
     background-color: rgb(74, 72, 72);
 }
