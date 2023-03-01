@@ -13,7 +13,7 @@
     margin: 0;
 }
 
-#display-container{
+#display-container1{
     display: flex;
     justify-content: end;
     align-items: end;
@@ -22,6 +22,21 @@
     border-top-left-radius: 25px;
     border-top-right-radius: 25px;
     border: 1px solid black;
+    border-bottom: 0px;
+    width: 406px;
+    height: 95.33px;
+    font-size: 45px;
+
+}
+
+#display-container{
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    color: azure;
+    background-color: rgb(39, 38, 38);
+    border: 1px solid black;
+    border-top: 0px;
     width: 406px;
     height: 95.33px;
     font-size: 45px;
