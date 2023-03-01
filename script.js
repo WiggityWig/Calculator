@@ -28,6 +28,13 @@ const buttons = document.querySelectorAll('.btn');
 
 let currentNumber = '';
 let combine = function(array) {
+    if (isNaN(array[0])) {
+        array.shift();
+        array[0]= -(array[0]);
+
+       
+       
+    }
     for (let i = 0; i <array.length; i++ ) {
         let char = array[i];
         if ((char !== '+') && (char !== '-') && (char !== '*') && (char !== '/')) {
@@ -47,7 +54,7 @@ clear.addEventListener('click', () => {
     initialArray = [];
     newArray = [];
     currentNumber = '';
-    display.textContent = '';
+    display.textContent = '0';
 });
 
 equals.addEventListener('click', () =>{
@@ -59,8 +66,14 @@ buttons.forEach(button => {
             return;
         }
        button.addEventListener('click', () => {
+        if(display.textContent == '0'){
+            display.textContent = button.textContent;
+            initialArray.push(button.textContent);
+        }
+            else{
        display.textContent += button.textContent;
        initialArray.push(button.textContent);
+            }
         
     });
 });
@@ -114,12 +127,11 @@ const calculate = (array) => {
             return num1 * num2;
         }
         else if (oper == "/") {
-            let result = num1 / num2;
-            if (result == "Infinity" || "NaN") {
+            let result = (num1 / num2);
+            if (result === Infinity || isNaN(result)) {
                 return 0;
-            }
-                else {
-                    return result;
-                }
+              } else {
+                return result;
+              }
         }
 }
