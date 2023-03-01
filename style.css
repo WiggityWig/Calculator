@@ -8,9 +8,14 @@
 #calculator-container{
     display: flex;
     flex-wrap: wrap;
-    width: 450px;
+    width: 400px;
     height: 500px;
     margin: 0;
+    padding-left: 5px;
+}
+
+#display{
+    padding-right: 10px;
 }
 
 #display-container1{
@@ -36,8 +41,10 @@
     color: azure;
     background-color: rgb(39, 38, 38);
     border: 1px solid black;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
     border-top: 0px;
-    width: 406px;
+    width: 361.8px;
     height: 95.33px;
     font-size: 45px;
 
@@ -54,7 +61,7 @@
     justify-content: center;
     align-items: center;
     border:1px solid black;
-    width:151px;
+    width:134.4px;
     height:83.33px;
     background-color: rgb(106, 104, 104);
     font-size: 28px;
@@ -66,14 +73,14 @@
     justify-content: center;
     align-items: center;
     border:1px solid black;
-    width:100px;
+    width: 89px;
     height:83.33px;
     background-color: rgb(106, 104, 104);
     font-size: 28px;
 }
 
 .btn.zero{
-    width:202px;
+    width:180px;
     border-bottom-left-radius: 25px;
 }
 
@@ -85,6 +92,6 @@
     background-color: rgb(218, 138, 10);
 }
 
-#clear,#pos-neg,#percentage{
+#clear,#del,#percentage{
     background-color: rgb(74, 72, 72);
 }
