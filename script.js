@@ -28,13 +28,13 @@ const buttons = document.querySelectorAll('.btn');
 
 let currentNumber = '';
 let combine = function(array) {
-    if (isNaN(array[0])) {
+    if ((array[0] == '-')) {
         array.shift();
         array[0]= -(array[0]);
-
-       
-       
     }
+        else if (array[0] == '+') {
+            array.shift();
+        }
     for (let i = 0; i <array.length; i++ ) {
         let char = array[i];
         if ((char !== '+') && (char !== '-') && (char !== '*') && (char !== '/')) {
