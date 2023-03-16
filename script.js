@@ -103,25 +103,33 @@ const calculate = (array) => {
     initialArray=[String(total)];
     currentNumber='';
 
-    return total;
-  }
+    if (total === Infinity || isNaN(total)) {
+        return 'Not a Number';
+      } else if (Number.isInteger(total)) {
+        return (total === 0 && display.textContent === '0') ? 0 : total;
+      } else {
+        return Number(total.toFixed(3));
+      }
+    }
 
- operate = (num1, oper, num2) =>{
-   if(oper == "+") {
-    return num1 + num2;
-}
-        else if(oper == "-") {
-            return num1 - num2;
-        }
-        else if (oper == "*") {
-            return num1 * num2;
-        }
-        else if (oper == "/") {
-            let result = (num1 / num2);
+    const operate = (num1, oper, num2) => {
+        if (oper == "+") {
+          return num1 + num2;
+        } else if (oper == "-") {
+          return num1 - num2;
+        } else if (oper == "*") {
+          return num1 * num2;
+        } else if (oper == "/") {
+          if (num2 === 0) {
+            return NaN;
+          } else {
+            let result = num1 / num2;
             if (result === Infinity || isNaN(result)) {
-                return 0;
-              } else {
-                return result;
-              }
+              return 0;
+            } else {
+              return result;
+            }
+          }
         }
-}
+      };
+      
